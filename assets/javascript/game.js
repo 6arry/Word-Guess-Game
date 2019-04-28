@@ -83,7 +83,7 @@ function checkLetters(letter) {
 
 
 function roundComplete() {
-    console.log("Wins: " + wins + " | Losses: " + losses + " | Guesses Remaining: " + guessesLeft);
+    console.log("Wins: " + wins + " | Losses: " + losses + " | Guesses Remaining: " + guessesLeft + " | Wrong Letters: " + wrongLetters);
 
     // Update the HTML to show the most recent count stats
     document.getElementById('guesses-left').innerHTML = guessesLeft;

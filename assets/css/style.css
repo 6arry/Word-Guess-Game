@@ -1,0 +1,19 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    background: url(../images/90s-cds-background.jpg);
+}
+
+/* Jumbotron */
+
+.jumbotron {
+    opacity: .8;
+}
+
+/* Global to all card divs */
+
+.card {
+    opacity: .8;
+}
