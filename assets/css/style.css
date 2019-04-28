@@ -16,4 +16,5 @@ body {
 
 .card {
     opacity: .8;
+    margin-bottom: 10px;
 }
