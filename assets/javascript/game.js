@@ -83,35 +83,36 @@ function checkLetters(letter) {
 
 
 function roundComplete() {
-    console.log("Wins: " + wins + " | Losses: " + losses + " | Guesses Remaining: " + guessesLeft)
+    console.log("Wins: " + wins + " | Losses: " + losses + " | Guesses Remaining: " + guessesLeft);
+
+    // Update the HTML to show the most recent count stats
+    document.getElementById('guesses-left').innerHTML = guessesLeft;
+    document.getElementById('chosen-artist').innerHTML = correctAndBlanks.join(" ");
+    document.getElementById('wrong-letters').innerHTML = wrongLetters.join(" ");
+
+    // Check if user won
+    if (correctLetters.toString() == correctAndBlanks.toString()) {
+        wins++;
+        alert("WINNER WINNER CHICKEN DINNER!");
+
+        // Update the win coutner in the HTML
+        document.getElementById("win-counter").innerHTML = wins;
+
+        startGame();
+    }
+
+    // Check if user lossed
+    else if (guessesLeft == 0) {
+        losses++;
+        alert("Too bad, so sad... v_v, you lose.")
+
+        // Update the HTML
+        document.getElementById('loss-counter').innerHTML = losses;
+
+        startGame();
+    }
+
 }
-// Update the HTML to show the most recent count stats
-document.getElementById('guesses-left').innerHTML = guessesLeft;
-document.getElementById('chosen-artist').innerHTML = correctAndBlanks.join(" ");
-document.getElementById('wrong-letters').innerHTML = wrongLetters.join(" ");
-
-// Check if user won
-if (correctLetters.toString() == correctAndBlanks.toString()) {
-    wins++;
-    alert("WINNER WINNER CHICKEN DINNER!");
-
-    // Update the win coutner in the HTML
-    document.getElementById("win-counter").innerHTML = wins;
-
-    startGame();
-}
-
-// Check if user lossed
-else if (guessesLeft = 0) {
-    losses++;
-    alert("Too bad, so sad... v_v, you lose.")
-
-    // Update the HTML
-    document.getElementById('loss-counter').innerHTML = losses;
-
-    startGame();
-}
-
 
 // MAIN PROCESS
 // =======================================================================
@@ -129,35 +130,3 @@ document.onkeyup = function() {
 
 
 }
-
-
-//  90's Hip Hop & RnB Theme Hangmang
-
-// Give conditions for each choice,
-// With each choice let there be a win, loss, take away a guess
-// Display the result to the user
-
-// List all the answers
-
-
-
-
-// // List all scores
-// var wins = 0,
-//     losses = 0,
-//     maxGuesses= 9,
-//     stored = [];
-
-// // How to make the user/player input a choice
-
-    
-// // How to make the computer make a choice
-//     var answer = artists[Math.floor(Math.random()*artists.length)];
-//     console.log("Computer's letter was --> " + answer)
-    
-// // Store the choices
-//     function() {
-        
-//     }
-
-// }
